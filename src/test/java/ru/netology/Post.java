@@ -2,6 +2,7 @@ package ru.netology;
 
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 class Post {
 
@@ -18,8 +19,7 @@ class Post {
                 // Проверки
                 .then()
                 .statusCode(200)
-                .body(/* --> ваша проверка здесь <-- */)
+                .body("data", equalTo("some value"))
         ;
     }
 }
-
